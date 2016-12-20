@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        form#flyOut{
+            border:1px solid darkgrey;
+            background-color: antiquewhite;
+            border-radius: 5px;
+            position: fixed;
+            Z-index:5;
+            padding: 50px 100px;
+        }
+        #shade{
+            opacity: 0.4;
+            background-color: darkgrey;
+            top:0px;
+            position: absolute;
+            z-index: 3;
+            display: none;
+        }
+        div{
+            width: 100%;
+            height: 80px;
+            background-color: antiquewhite;
+        }
+        button{
+            width: 70px;
+            height: 40px;
+            font-size: larger;
+            border-radius: 3px;
+            background-color: aqua;
+            border: hidden;
+            color: azure;
+            font-weight: bolder;
+            margin-left: 300px;
+            margin-top: 20px;
+        }
+        #userName{
+           margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button>登录</button>
+    </div>
+    <form id="flyOut" draggable="true">
+        <div id="userName">帐号：<input type="text"></div>
+        <div id="password">密码：<input type="password"></div>
+    </form>
+    <div id="shade">
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
