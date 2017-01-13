@@ -19,5 +19,26 @@ function fillBody(elem) {
     elem.style.height=document.documentElement.clientHeight+"px";
 }
 
+(function (ele) {
+    var startX,startY,mouseX,mouseY,flag=0;
+    ele.onmousedown=function (e) {
+        flag=1;
+        startX=ele.style.left;
+        startY=ele.style.top;
+        mouseX=e.clientX;
+        mouseY=e.clientY;
+    };
+    document.onmousemove=function (ee) {
+        if(flag){
+            ele.style.top=parseFloat(startY)+ee.clientY-mouseY+"px";
+            ele.style.left=parseFloat(startX)+ee.clientX-mouseX+"px";
+        }
+    }
+    document.onmouseup=function () {
+        flag=0;
+    }
+}(sl("#flyOut")));
+
+
 fillBody(sl("#shade"));
 siteCenter(sl("#flyOut"));
